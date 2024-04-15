@@ -141,9 +141,9 @@ const PostList = ({ loggedInUser }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        let url = 'http://localhost:5000/api/posts';
+        let url = 'http://localhost:3000/api/posts';
         if (loggedInUser) {
-          url = `http://localhost:5000/api/posts/${loggedInUser}`;
+          url = `http://localhost:3000/api/posts/${loggedInUser}`;
         }
         const response = await axios.get(url);
         setPosts(response.data);
@@ -225,7 +225,7 @@ const App = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:5000/api/login', {
+      const response = await axios.post('http://localhost:3000/api/login', {
         username,
         password,
       });
@@ -267,7 +267,7 @@ const App = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:5000/api/register', {
+      const response = await axios.post('http://localhost:3000/api/register', {
         username,
         password,
       });

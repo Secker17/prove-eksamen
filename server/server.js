@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // MongoDB connection URI
-const uri = 'mongodb://10.12.11.193:27017/?directConnection=true&appName=mongosh+2.2.2';
+const uri = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.3';
 
 // Connect to MongoDB
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -130,5 +130,5 @@ app.get('/api/posts/:username', async (req, res) => {
 });
 
 // Set up server to listen on port 5000
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
