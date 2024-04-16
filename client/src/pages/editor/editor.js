@@ -9,7 +9,7 @@ const Editor = ({ loggedInUsername }) => {
 
   const handlePublish = async () => {
     try {
-      await axios.post('http://localhost:3000/api/posts', { title, info, credText, username: loggedInUsername });
+      await axios.post('http://localhost:5000/api/posts', { title, info, credText, username: loggedInUsername });
       console.log('Innlegg publisert!');
       setPublished(true);
       // Legg til eventuell annen logikk etter vellykket publisering
